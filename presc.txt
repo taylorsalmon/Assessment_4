@@ -1,0 +1,10 @@
+Prescription ID: 6
+First Name: John
+Last Name: Smith
+Address: 123 Main Street, Suburbia, 12345, Country
+Sphere: 0.0
+Cylinder: 0.0
+Axis: 90.0
+Examination Date: 23/10/24
+Optometrist: Dr. William Smith
+
