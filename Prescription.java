@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -17,13 +16,13 @@ public class Prescription {
     private ArrayList<String> postRemarks = new ArrayList<>();
 
     public boolean addPrescription() {
-        // heck first name length
+        // check first name length
         if (firstName == null || firstName.length() < 4 || firstName.length() > 15) {
             System.out.println("First name must be between 4 and 15 characters long.");
             return false;
         }
 
-        //check last name length
+        // check last name length
         if (lastName == null || lastName.length() < 4 || lastName.length() > 15) {
             System.out.println("Last name must be between 4 and 15 characters.");
             return false;
@@ -35,7 +34,7 @@ public class Prescription {
             return false;
         }
 
-        //check sphere range
+        // check sphere range
         if (sphere < -20.00f || sphere > 20.00f) {
             System.out.println("Sphere must be between -20.00 and +20.00.");
             return false;
@@ -47,7 +46,7 @@ public class Prescription {
             return false;
         }
 
-        // heck axis range
+        // check axis range
         if (axis < 0.0f || axis > 180.0f) {
             System.out.println("Axis must be between 0 and 180.");
             return false;
@@ -92,8 +91,10 @@ public class Prescription {
         }
     }
 
+    //second function
+
     public boolean addRemark(String remark, String category) {
-        // check remark is not null and word count
+        //check remark is not null and word count
         if (remark == null) {
             System.out.println("Remark cannot be null.");
             return false;
@@ -111,13 +112,13 @@ public class Prescription {
             return false;
         }
 
-        // check category is valid
+        //check category is valid
         if (category == null || (!category.equalsIgnoreCase(remarkTypes[0]) && !category.equalsIgnoreCase(remarkTypes[1]))) {
             System.out.println("Category must be 'client' or 'optometrist'.");
             return false;
         }
 
-        //check if maximum remarks reached
+        // check if maximum remarks reached
         if (postRemarks.size() >= 2) {
             System.out.println("Cannot add more than 2 remarks.");
             return false;
@@ -126,9 +127,10 @@ public class Prescription {
         // add remark to list
         postRemarks.add(remark);
 
-        // write remark to file
+        //write remark to file with prescID
         try {
             java.io.FileWriter writer = new java.io.FileWriter("review.txt", true);
+            writer.write("Prescription ID: " + prescID + "\n"); 
             writer.write("Category: " + category + "\n");
             writer.write("Remark: " + remark + "\n\n");
             writer.close();

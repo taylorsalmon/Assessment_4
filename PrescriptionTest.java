@@ -125,6 +125,7 @@ public class PrescriptionTest {
     @Test
     public void testAddRemark_ValidRemark() {
         Prescription prescription = new Prescription();
+        prescription.prescID = prescriptionCounter; // make sure prescription ID is included
 
         String remark = "This is a valid remark with more than six words.";
         String category = "client";
@@ -137,6 +138,7 @@ public class PrescriptionTest {
     @Test
     public void testAddRemark_NullRemark() {
         Prescription prescription = new Prescription();
+        prescription.prescID = prescriptionCounter; // make sure prescription ID is included
 
         String remark = null;
         String category = "client";
@@ -149,6 +151,7 @@ public class PrescriptionTest {
     @Test
     public void testAddRemark_RemarkTooShort() {
         Prescription prescription = new Prescription();
+        prescription.prescID = prescriptionCounter; // make sure prescription ID is included
 
         String remark = "Too short";
         String category = "client";
@@ -161,6 +164,7 @@ public class PrescriptionTest {
     @Test
     public void testAddRemark_RemarkTooLong() {
         Prescription prescription = new Prescription();
+        prescription.prescID = prescriptionCounter; // make sure prescription ID is included
 
         String remark = "This remark has way too many words and should definitely be longer than twenty words so that it fails the test case for remarks that are too long.";
         String category = "client";
@@ -173,6 +177,7 @@ public class PrescriptionTest {
     @Test
     public void testAddRemark_FirstCharacterNotUppercase() {
         Prescription prescription = new Prescription();
+        prescription.prescID = prescriptionCounter; // make sure prescription ID is included
 
         String remark = "this remark starts with a lowercase letter.";
         String category = "client";
@@ -185,6 +190,7 @@ public class PrescriptionTest {
     @Test
     public void testAddRemark_InvalidCategory() {
         Prescription prescription = new Prescription();
+        prescription.prescID = prescriptionCounter; // make sure prescription ID is included
 
         String remark = "This is a valid remark with more than six words.";
         String category = "invalid";
@@ -197,6 +203,7 @@ public class PrescriptionTest {
     @Test
     public void testAddRemark_MoreThanTwoRemarks() {
         Prescription prescription = new Prescription();
+        prescription.prescID = prescriptionCounter; // make sure prescription ID is included
 
         String remark1 = "This is the first valid remark.";
         String remark2 = "This is the second valid remark.";
